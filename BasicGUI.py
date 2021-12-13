@@ -57,7 +57,7 @@ def sumdata():
 
 GUI = Tk()
 GUI.geometry('600x700')
-GUI.title('โปรแกรมของลุง')
+GUI.title('Fruit calc v.0.0.1')
 
 file = PhotoImage(file='durian.png')
 IMG = Label(GUI,image=file,text='')
@@ -66,7 +66,7 @@ IMG.pack()
 L1 = Label(GUI,text='โปรแกรมคำนวณทุเรียน',font=('Angsana New',30,'bold'),fg='green')
 L1.pack() # .place(x,y) , .grid(row=0,column=0)
 
-L2 = Label(GUI,text='กรุณากรอกจำนวนทุเรียน',font=('Angsana New',20))
+L2 = Label(GUI,text='กรุณากรอกจำนวนทุเรียน (กิโลกรัม)',font=('Angsana New',20))
 L2.pack()
 
 v_quantity = StringVar() #ตำแหน่งตัวแปรที่ใช้เก็บข้อมูลของช่องกรอก
@@ -80,7 +80,7 @@ def Calculate(event=None):
 	print('จำนวน', float(quantity) * price)
 	cal = float(quantity) * price
 	
-	# writetext(quantity,cal)
+	
 	data = [timestamp(thai=False), quantity, cal]
 	writecsv(data)
 
@@ -105,6 +105,7 @@ def SummaryData(event):
 	messagebox.showinfo(title, text)
 
 GUI.bind('<F12>',SummaryData)
+GUI.bind('<F11>',SummaryData)
 
 E1.focus() # ให้ cursor ไป E1
 GUI.mainloop()
