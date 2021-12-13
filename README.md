@@ -1,2 +1,2 @@
-# Bootcamp-BasicGUI
-Basic calculate code in Python
+# bootcamp-basicgui
+Python Bootcamp Basic GUI
